@@ -2616,20 +2616,15 @@ static int __pyx_pymod_exec_fibonacci(PyObject *__pyx_pyinit_module)
   /* "fibonacci.pyx":22
  * 
  * 
- * print(70*'-', '\n') # For dividers and space             # <<<<<<<<<<<<<<
+ * print(70*'-' + '\n') # For dividers and space             # <<<<<<<<<<<<<<
  * 
  * ### Method: 2
  */
   __pyx_t_1 = PyNumber_Multiply(__pyx_int_70, __pyx_kp_s__5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 22, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 22, __pyx_L1_error)
+  __pyx_t_5 = PyNumber_Add(__pyx_t_1, __pyx_kp_s__6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 22, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __Pyx_GIVEREF(__pyx_t_1);
-  PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_1);
-  __Pyx_INCREF(__pyx_kp_s__6);
-  __Pyx_GIVEREF(__pyx_kp_s__6);
-  PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_kp_s__6);
-  __pyx_t_1 = 0;
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__Pyx_PrintOne(0, __pyx_t_5) < 0) __PYX_ERR(0, 22, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
