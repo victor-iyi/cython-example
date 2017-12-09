@@ -8,15 +8,15 @@ import time
 # +———————————————————————————————————————————————————————————————————————————————————————————+
 ################################################################################################
 print('Method: 1')
-def fibonacci(no):
+cdef fibonacci(int no):
     series = [1, 1]
     for _ in range(1, no-1):
         series.append(series[-1] + series[-2])
     return series
 
-n_sequence = input('How many fibonacci numbers should I generate for you: ')
+n_sequence = int(input('How many fibonacci numbers should I generate for you: '))
 start = time.time()
-series = fibonacci(int(n_sequence))
+series = fibonacci(n_sequence)
 end = time.time()
 print('Computation took {:.6f} seconds'.format(end-start))
 print(series)
@@ -29,16 +29,17 @@ print(80*'-' + '\n') # For dividers and space
 # | Method 2
 # +———————————————————————————————————————————————————————————————————————————————————————————+
 ################################################################################################
+
 print('Method: 2')
-def fib(no):
-    if no <=2:
+cdef int fib_2(int no):
+    if no <= 2:
         return 1
     else:
-        return fib(no-1) + fib(no-2)
+        return fib_2(no-1) + fib_2(no-2)
 
-n_sequence = input('How many fibonacci numbers should I generate for you: ')
+n_sequence = int(input('How many fibonacci numbers should I generate for you: '))
 start = time.time()
-series = [fib(i) for i in range(1, int(n_sequence)+1)]
+series = [fib_2(i) for i in range(1, n_sequence+1)]
 end = time.time()
 print('Computation took {:.6f} seconds'.format(end-start))
 print(series)
@@ -54,22 +55,22 @@ print(80*'-' + '\n') # For dividers and space
 ################################################################################################
 
 print('Method: 3')
-def fib(no):
+cdef int fib_3(int no) except *:
+    cdef int f
     if no <= 2:
         f = 1
     else:
-        f = fib(no-1) + fib(no-2)
+        f = fib_3(no-1) + fib_3(no-2)
     return f
 
-n_sequence = input('How many fibonacci numbers should I generate for you: ')
+n_sequence = int(input('How many fibonacci numbers should I generate for you: '))
 start = time.time()
-series = [fib(i) for i in range(1, int(n_sequence)+1)]
+series = [fib_3(i) for i in range(1, n_sequence+1)]
 end = time.time()
 print('Computation took {:.6f} seconds'.format(end-start))
 print(series)
 
 print(80*'-' + '\n') # For dividers and space
-
 
 ################################################################################################
 # +———————————————————————————————————————————————————————————————————————————————————————————+
@@ -80,19 +81,20 @@ print(80*'-' + '\n') # For dividers and space
 
 print('Method: 4')
 memo = {}
-def fib(no):
+cdef int fib_4(int no):
+    cdef int f
     if no in memo:
         return memo[no]
     if no <= 2:
         f = 1
     else:
-        f = fib(no-1) + fib(no-2)
+        f = fib_4(no-1) + fib_4(no-2)
     memo[no] = f
     return f
 
-n_sequence = input('How many fibonacci numbers should I generate for you: ')
+n_sequence = int(input('How many fibonacci numbers should I generate for you: '))
 start = time.time()
-series = [fib(i) for i in range(1, int(n_sequence)+1)]
+series = [fib_4(i) for i in range(1, n_sequence+1)]
 end = time.time()
 print('Computation took {:.6f} seconds'.format(end-start))
 print(series)
