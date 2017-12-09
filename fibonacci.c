@@ -1058,7 +1058,7 @@ static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 
 /* Module declarations from 'fibonacci' */
-static PyObject *__pyx_f_9fibonacci_fibonacci(int); /*proto*/
+static PyObject *__pyx_f_9fibonacci_fib_1(int); /*proto*/
 static int __pyx_f_9fibonacci_fib_2(int); /*proto*/
 static int __pyx_f_9fibonacci_fib_3(int); /*proto*/
 static int __pyx_f_9fibonacci_fib_4(int); /*proto*/
@@ -1127,12 +1127,12 @@ static PyObject *__pyx_tuple__6;
 /* "fibonacci.pyx":11
  * ################################################################################################
  * print('Method: 1')
- * cdef fibonacci(int no):             # <<<<<<<<<<<<<<
+ * cdef fib_1(int no):             # <<<<<<<<<<<<<<
  *     series = [1, 1]
  *     for _ in range(1, no-1):
  */
 
-static PyObject *__pyx_f_9fibonacci_fibonacci(int __pyx_v_no) {
+static PyObject *__pyx_f_9fibonacci_fib_1(int __pyx_v_no) {
   PyObject *__pyx_v_series = NULL;
   CYTHON_UNUSED long __pyx_v__;
   PyObject *__pyx_r = NULL;
@@ -1143,11 +1143,11 @@ static PyObject *__pyx_f_9fibonacci_fibonacci(int __pyx_v_no) {
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   int __pyx_t_6;
-  __Pyx_RefNannySetupContext("fibonacci", 0);
+  __Pyx_RefNannySetupContext("fib_1", 0);
 
   /* "fibonacci.pyx":12
  * print('Method: 1')
- * cdef fibonacci(int no):
+ * cdef fib_1(int no):
  *     series = [1, 1]             # <<<<<<<<<<<<<<
  *     for _ in range(1, no-1):
  *         series.append(series[-1] + series[-2])
@@ -1164,7 +1164,7 @@ static PyObject *__pyx_f_9fibonacci_fibonacci(int __pyx_v_no) {
   __pyx_t_1 = 0;
 
   /* "fibonacci.pyx":13
- * cdef fibonacci(int no):
+ * cdef fib_1(int no):
  *     series = [1, 1]
  *     for _ in range(1, no-1):             # <<<<<<<<<<<<<<
  *         series.append(series[-1] + series[-2])
@@ -1208,7 +1208,7 @@ static PyObject *__pyx_f_9fibonacci_fibonacci(int __pyx_v_no) {
   /* "fibonacci.pyx":11
  * ################################################################################################
  * print('Method: 1')
- * cdef fibonacci(int no):             # <<<<<<<<<<<<<<
+ * cdef fib_1(int no):             # <<<<<<<<<<<<<<
  *     series = [1, 1]
  *     for _ in range(1, no-1):
  */
@@ -1218,7 +1218,7 @@ static PyObject *__pyx_f_9fibonacci_fibonacci(int __pyx_v_no) {
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("fibonacci.fibonacci", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("fibonacci.fib_1", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_series);
@@ -1299,7 +1299,7 @@ static int __pyx_f_9fibonacci_fib_2(int __pyx_v_no) {
 /* "fibonacci.pyx":58
  * 
  * print('Method: 3')
- * cdef int fib_3(int no) except *:             # <<<<<<<<<<<<<<
+ * cdef int fib_3(int no):             # <<<<<<<<<<<<<<
  *     cdef int f
  *     if no <= 2:
  */
@@ -1309,12 +1309,10 @@ static int __pyx_f_9fibonacci_fib_3(int __pyx_v_no) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
-  int __pyx_t_2;
-  int __pyx_t_3;
   __Pyx_RefNannySetupContext("fib_3", 0);
 
   /* "fibonacci.pyx":60
- * cdef int fib_3(int no) except *:
+ * cdef int fib_3(int no):
  *     cdef int f
  *     if no <= 2:             # <<<<<<<<<<<<<<
  *         f = 1
@@ -1333,7 +1331,7 @@ static int __pyx_f_9fibonacci_fib_3(int __pyx_v_no) {
     __pyx_v_f = 1;
 
     /* "fibonacci.pyx":60
- * cdef int fib_3(int no) except *:
+ * cdef int fib_3(int no):
  *     cdef int f
  *     if no <= 2:             # <<<<<<<<<<<<<<
  *         f = 1
@@ -1350,9 +1348,7 @@ static int __pyx_f_9fibonacci_fib_3(int __pyx_v_no) {
  * 
  */
   /*else*/ {
-    __pyx_t_2 = __pyx_f_9fibonacci_fib_3((__pyx_v_no - 1)); if (unlikely(__pyx_t_2 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 63, __pyx_L1_error)
-    __pyx_t_3 = __pyx_f_9fibonacci_fib_3((__pyx_v_no - 2)); if (unlikely(__pyx_t_3 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 63, __pyx_L1_error)
-    __pyx_v_f = (__pyx_t_2 + __pyx_t_3);
+    __pyx_v_f = (__pyx_f_9fibonacci_fib_3((__pyx_v_no - 1)) + __pyx_f_9fibonacci_fib_3((__pyx_v_no - 2)));
   }
   __pyx_L3:;
 
@@ -1369,15 +1365,12 @@ static int __pyx_f_9fibonacci_fib_3(int __pyx_v_no) {
   /* "fibonacci.pyx":58
  * 
  * print('Method: 3')
- * cdef int fib_3(int no) except *:             # <<<<<<<<<<<<<<
+ * cdef int fib_3(int no):             # <<<<<<<<<<<<<<
  *     cdef int f
  *     if no <= 2:
  */
 
   /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_AddTraceback("fibonacci.fib_3", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = -1;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
@@ -1610,7 +1603,7 @@ static int __Pyx_InitCachedConstants(void) {
  * 
  * n_sequence = int(input('How many fibonacci numbers should I generate for you: '))             # <<<<<<<<<<<<<<
  * start = time.time()
- * series = fibonacci(n_sequence)
+ * series = fib_1(n_sequence)
  */
   __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_s_How_many_fibonacci_numbers_shoul); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple_);
@@ -1721,7 +1714,6 @@ static int __pyx_pymod_exec_fibonacci(PyObject *__pyx_pyinit_module)
   PyObject *__pyx_t_6 = NULL;
   Py_ssize_t __pyx_t_7;
   PyObject *(*__pyx_t_8)(PyObject *);
-  int __pyx_t_9;
   __Pyx_RefNannyDeclarations
   #if CYTHON_PEP489_MULTI_PHASE_INIT
   if (__pyx_m && __pyx_m == __pyx_pyinit_module) return 0;
@@ -1832,7 +1824,7 @@ static int __pyx_pymod_exec_fibonacci(PyObject *__pyx_pyinit_module)
  * # ++
  * ################################################################################################
  * print('Method: 1')             # <<<<<<<<<<<<<<
- * cdef fibonacci(int no):
+ * cdef fib_1(int no):
  *     series = [1, 1]
  */
   if (__Pyx_PrintOne(0, __pyx_kp_s_Method_1) < 0) __PYX_ERR(0, 10, __pyx_L1_error)
@@ -1842,7 +1834,7 @@ static int __pyx_pymod_exec_fibonacci(PyObject *__pyx_pyinit_module)
  * 
  * n_sequence = int(input('How many fibonacci numbers should I generate for you: '))             # <<<<<<<<<<<<<<
  * start = time.time()
- * series = fibonacci(n_sequence)
+ * series = fib_1(n_sequence)
  */
   __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_input, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -1856,7 +1848,7 @@ static int __pyx_pymod_exec_fibonacci(PyObject *__pyx_pyinit_module)
  * 
  * n_sequence = int(input('How many fibonacci numbers should I generate for you: '))
  * start = time.time()             # <<<<<<<<<<<<<<
- * series = fibonacci(n_sequence)
+ * series = fib_1(n_sequence)
  * end = time.time()
  */
   __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_time); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 18, __pyx_L1_error)
@@ -1888,7 +1880,7 @@ static int __pyx_pymod_exec_fibonacci(PyObject *__pyx_pyinit_module)
   /* "fibonacci.pyx":19
  * n_sequence = int(input('How many fibonacci numbers should I generate for you: '))
  * start = time.time()
- * series = fibonacci(n_sequence)             # <<<<<<<<<<<<<<
+ * series = fib_1(n_sequence)             # <<<<<<<<<<<<<<
  * end = time.time()
  * print('Computation took {:.6f} seconds'.format(end-start))
  */
@@ -1896,14 +1888,14 @@ static int __pyx_pymod_exec_fibonacci(PyObject *__pyx_pyinit_module)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_4 = __Pyx_PyInt_As_int(__pyx_t_2); if (unlikely((__pyx_t_4 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 19, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __pyx_f_9fibonacci_fibonacci(__pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 19, __pyx_L1_error)
+  __pyx_t_2 = __pyx_f_9fibonacci_fib_1(__pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 19, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_series, __pyx_t_2) < 0) __PYX_ERR(0, 19, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "fibonacci.pyx":20
  * start = time.time()
- * series = fibonacci(n_sequence)
+ * series = fib_1(n_sequence)
  * end = time.time()             # <<<<<<<<<<<<<<
  * print('Computation took {:.6f} seconds'.format(end-start))
  * print(series)
@@ -1935,7 +1927,7 @@ static int __pyx_pymod_exec_fibonacci(PyObject *__pyx_pyinit_module)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "fibonacci.pyx":21
- * series = fibonacci(n_sequence)
+ * series = fib_1(n_sequence)
  * end = time.time()
  * print('Computation took {:.6f} seconds'.format(end-start))             # <<<<<<<<<<<<<<
  * print(series)
@@ -2294,7 +2286,7 @@ static int __pyx_pymod_exec_fibonacci(PyObject *__pyx_pyinit_module)
  * ################################################################################################
  * 
  * print('Method: 3')             # <<<<<<<<<<<<<<
- * cdef int fib_3(int no) except *:
+ * cdef int fib_3(int no):
  *     cdef int f
  */
   if (__Pyx_PrintOne(0, __pyx_kp_s_Method_3) < 0) __PYX_ERR(0, 57, __pyx_L1_error)
@@ -2418,8 +2410,7 @@ static int __pyx_pymod_exec_fibonacci(PyObject *__pyx_pyinit_module)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_4 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_4 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 68, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_9 = __pyx_f_9fibonacci_fib_3(__pyx_t_4); if (unlikely(__pyx_t_9 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 68, __pyx_L1_error)
-    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_t_9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 68, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_f_9fibonacci_fib_3(__pyx_t_4)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 68, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     if (unlikely(__Pyx_ListComp_Append(__pyx_t_2, (PyObject*)__pyx_t_1))) __PYX_ERR(0, 68, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -2692,9 +2683,9 @@ static int __pyx_pymod_exec_fibonacci(PyObject *__pyx_pyinit_module)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_i); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 97, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_9 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_9 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 97, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_4 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 97, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_f_9fibonacci_fib_4(__pyx_t_9)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 97, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_f_9fibonacci_fib_4(__pyx_t_4)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 97, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     if (unlikely(__Pyx_ListComp_Append(__pyx_t_2, (PyObject*)__pyx_t_1))) __PYX_ERR(0, 97, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;

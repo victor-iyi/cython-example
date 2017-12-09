@@ -8,7 +8,7 @@ import time
 # +———————————————————————————————————————————————————————————————————————————————————————————+
 ################################################################################################
 print('Method: 1')
-cdef fibonacci(int no):
+cdef fib_1(int no):
     series = [1, 1]
     for _ in range(1, no-1):
         series.append(series[-1] + series[-2])
@@ -16,7 +16,7 @@ cdef fibonacci(int no):
 
 n_sequence = int(input('How many fibonacci numbers should I generate for you: '))
 start = time.time()
-series = fibonacci(n_sequence)
+series = fib_1(n_sequence)
 end = time.time()
 print('Computation took {:.6f} seconds'.format(end-start))
 print(series)
@@ -55,7 +55,7 @@ print(80*'-' + '\n') # For dividers and space
 ################################################################################################
 
 print('Method: 3')
-cdef int fib_3(int no) except *:
+cdef int fib_3(int no):
     cdef int f
     if no <= 2:
         f = 1
