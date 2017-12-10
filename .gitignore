@@ -3,17 +3,34 @@
 __pycache__/
 *.py[cod]
 *$py.class
+
 # C extensions
 *.so
-# Setup build
-build
+
+# Distribution / packaging
+.Python
+build/
+
 # Jupyter Notebook
 .ipynb_checkpoints
 
 
-### Pycharm
+### JetBrains template
 .idea
 
-
-### VSCode template
+### VisualStudioCode template
 .vscode
+#!.vscode/settings.json
+#!.vscode/tasks.json
+#!.vscode/launch.json
+#!.vscode/extensions.json
+
+
+### macOS template
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
