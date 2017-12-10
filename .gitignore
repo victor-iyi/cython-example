@@ -11,5 +11,9 @@ build
 .ipynb_checkpoints
 
 
+### Pycharm
+.idea
+
+
 ### VSCode template
 .vscode
